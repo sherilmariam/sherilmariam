@@ -1,10 +1,9 @@
 <h1 align="center">Hey 👋, I'm Sheril</h1>
+
 <h3 align="center">A passionate and dedicated undergraduate with a strong inclination towards technology.</h3>
 
-<img align="right" alt="Coding" width="400" src="https://www.behance.net/gallery/116770475/Animated-illustrations">
+<img align="right" alt="Coding" width="400" src="https://www.behance.net/gallery/116770475/Animated-illustrations/modules/665796227.gif">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sherilmariam&label=Profile%20views&color=0e75b6&style=flat" alt="sherilmariam" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sherilmariam" alt="sherilmariam" /></a> </p>
 
 - 🌱 I’m currently learning **ML**
 
