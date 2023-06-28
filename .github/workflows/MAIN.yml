@@ -31,10 +31,10 @@ jobs:
         with:
           github_user_name: mishmanners
           # these next 2 lines generate the files on a branch called "output". This keeps the main branch from cluttering up.
- name: Save state
+- name: Save state
 run: echo "{name}={value}" >> $GITHUB_STATE
 
- name: Set output
+- name: Set output
 run: echo "{name}={value}" >> $GITHUB_OUTPUT
 
 gif_out_path: dist/github-contribution-grid-snake.gif
