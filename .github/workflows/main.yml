@@ -36,14 +36,13 @@ jobs:
       - name: Set Output
         run: echo "snake_svg_path=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
 
-      - name: Set File Permissions
-        run: chmod 644 dist/github-contribution-grid-snake.svg
-
-      - name: Install ImageMagick
-        run: sudo apt-get install -y imagemagick
+      - name: Install SVG Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
 
       - name: Resize SVG File
-        run: convert dist/github-contribution-grid-snake.svg -resize 100% dist/resized-github-contribution-grid-snake.svg
+        run: rsvg-convert -w 100% -h 100% -o dist/resized-github-contribution-grid-snake.svg dist/github-contribution-grid-snake.svg
 
       - name: Push changes
         uses: ad-m/github-push-action@master
