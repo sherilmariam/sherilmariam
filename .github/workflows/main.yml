@@ -51,6 +51,5 @@ jobs:
           target_branch: output
           build_dir: dist
           node-version: '16.x'
-      - name: Set Output
-          run:echo "output_name=output_value" >> $GITHUB_ENV
-
+        env: 
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
