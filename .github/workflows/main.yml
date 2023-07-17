@@ -37,7 +37,7 @@ jobs:
         run: echo "snake_svg_path=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
 
       - name: Modify Permissions
-        run: chmod -R 777 dist
+        run: sudo chown -R $USER:$USER dist
 
       - name: Install ImageMagick
         run: |
