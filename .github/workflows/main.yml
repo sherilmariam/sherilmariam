@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
+        with:
+          node-version: '16'
 
       - name: Generate GitHub contribution graph snake animation
         uses: Platane/snk@master
@@ -28,6 +30,11 @@ jobs:
           github_user_name: ${{ github.actor }}
           gif_out_path: dist/github-contribution-grid-snake.gif
           svg_out_path: dist/github-contribution-grid-snake.svg
+
+      - name: Set Output
+        run: echo "snake_gif_path=dist/github-contribution-grid-snake.gif" >> $GITHUB_ENV
+      - name: Set Output
+        run: echo "snake_svg_path=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
 
       - name: Push changes
         uses: ad-m/github-push-action@master
