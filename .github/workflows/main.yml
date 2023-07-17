@@ -36,14 +36,14 @@ jobs:
       - name: Set Output
         run: echo "snake_svg_path=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
 
-      - name: Install Inkscape
+      - name: Install ImageMagick
         run: |
           sudo apt-get update
-          sudo apt-get install -y inkscape
+          sudo apt-get install -y imagemagick
 
       - name: Resize SVG File
         run: |
-          inkscape -z -e dist/resized-github-contribution-grid-snake.png -w 100% -h 100% dist/github-contribution-grid-snake.svg
+          convert -background none -resize 100% dist/github-contribution-grid-snake.svg dist/resized-github-contribution-grid-snake.png
 
       - name: Push changes
         uses: ad-m/github-push-action@master
