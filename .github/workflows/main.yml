@@ -11,12 +11,13 @@ on:
   # run on every push on the master branch
   push:
     branches:
-    - master
+      - master
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
@@ -25,9 +26,8 @@ jobs:
         uses: Platane/snk@master
         with:
           github_user_name: ${{ github.actor }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          gif_out_path: dist/github-contribution-grid-snake.gif
+          svg_out_path: dist/github-contribution-grid-snake.svg
 
       - name: Push changes
         uses: ad-m/github-push-action@master
