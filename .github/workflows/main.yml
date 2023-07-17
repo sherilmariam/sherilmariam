@@ -41,18 +41,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y librsvg2-bin
 
-      - name: Calculate SVG Dimensions
-        run: |
-          width=$(rsvg-convert -z -f plain -o - dist/github-contribution-grid-snake.svg | awk '/^width:/ { print $2 }')
-          height=$(rsvg-convert -z -f plain -o - dist/github-contribution-grid-snake.svg | awk '/^height:/ { print $2 }')
-          echo "width=${width%.*}px" >> $GITHUB_ENV
-          echo "height=${height%.*}px" >> $GITHUB_ENV
-
       - name: Resize SVG File
         run: |
-          width=${{ env.width }}
-          height=${{ env.height }}
-          rsvg-convert -w $width -h $height -o dist/resized-github-contribution-grid-snake.svg dist/github-contribution-grid-snake.svg
+          original_width=$(rsvg-convert -z -f plain -o - dist/github-contribution-grid-snake.svg | awk '/^width:/ { print $2 }')
+          original_height=$(rsvg-convert -z -f plain -o - dist/github-contribution-grid-snake.svg | awk '/^height:/ { print $2 }')
+          resized_width=$(echo "scale=0; $original_width * 1.0" | bc)
+          resized_height=$(echo "scale=0; $original_height * 1.0" | bc)
+          rsvg-convert -w $resized_width -h $resized_height -o dist/resized-github-contribution-grid-snake.svg dist/github-contribution-grid-snake.svg
 
       - name: Push changes
         uses: ad-m/github-push-action@master
