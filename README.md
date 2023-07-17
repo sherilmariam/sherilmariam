@@ -10,7 +10,7 @@
 - 💬 Ask me about **Web**
 
 - 📫 How to reach me **sherilmariamjose@gmail.com**
-- ![snake gif](https://github.com/abdulayef1/abdulayef1/blob/output/github-contribution-grid-snake.svg)
+![snake gif](https://github.com/sherilmariam/sherilmariam/blob/output/github-contribution-grid-snake.gif)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
