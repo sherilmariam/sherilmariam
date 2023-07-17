@@ -39,14 +39,12 @@ jobs:
       - name: Modify Permissions
         run: sudo chown -R $USER:$USER dist
 
-      - name: Install ImageMagick
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick
+      - name: Install librsvg
+        run: sudo apt-get install -y librsvg2-bin
 
       - name: Resize SVG File
         run: |
-          convert -background none -resize 100% dist/github-contribution-grid-snake.svg dist/resized-github-contribution-grid-snake.png
+          rsvg-convert -z -f png -o dist/resized-github-contribution-grid-snake.png dist/github-contribution-grid-snake.svg
 
       - name: Push changes
         uses: ad-m/github-push-action@master
