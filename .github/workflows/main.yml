@@ -45,8 +45,8 @@ jobs:
         run: |
           width=$(rsvg-convert -z -f plain -o - dist/github-contribution-grid-snake.svg | awk '/^width:/ { print $2 }')
           height=$(rsvg-convert -z -f plain -o - dist/github-contribution-grid-snake.svg | awk '/^height:/ { print $2 }')
-          echo "width=${width%.*}" >> $GITHUB_ENV
-          echo "height=${height%.*}" >> $GITHUB_ENV
+          echo "width=${width%.*}px" >> $GITHUB_ENV
+          echo "height=${height%.*}px" >> $GITHUB_ENV
 
       - name: Resize SVG File
         run: |
